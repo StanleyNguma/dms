@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Alpha DMS Homepage</title>
+    {% comment %} Load the path to your css {% endcomment %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/formValidation.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dropzone/basic.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dropzone/dropzone.css' %}">
+    <script>
+        paceOptions = {
+            elements: true
+        };
+    </script>
+    <script src="{% static 'js/pace.min.js' %}"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="header">
+        <nav class="navbar   navbar-site navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span></button>
+                    <a href="/" class="navbar-brand logo logo-title">
+
+                        <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>
+                        Alpha <span>DMS </span> </a></div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="postadd">
+                            <a class="btn btn-block btn-border btn-post btn-danger" data-toggle="modal"
+                               data-target="#myModal" href="#">Upload Files</a>
+                        </li>
+                        <li>
+                            <a href="/login">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="intro" style="background-image: url( {% static 'images/bg3.jpg' %});">
+        <div class="dtable hw100">
+            <div class="dtable-cell hw100">
+                <div class="container text-center">
+                    <h1 class="intro-title animated fadeInDown"> Search for files </h1>
+                    <p class="sub animateme fittext3 animated fadeIn"> Find uploaded files in Seconds </p>
+                    <div class="row search-row animated fadeInUp">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-6 col-sm-6 search-col relative locationicon">
+                            <i class="icon-search-2 icon-append"></i>
+                            <input type="text" name="file" id="autocomplete-ajax"
+                                   class="form-control locinput input-rel searchtag-input has-icon"
+                                   placeholder="Files..." value="">
+                        </div>
+                        <div class="col-lg-2 col-sm-2 search-col">
+                            <button class="btn btn-primary btn-search btn-block"><i
+                                    class="icon-search"></i><strong>Find</strong></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-info hasOverly" style="background: url({% static 'images/bg.jpg' %}); background-size:cover">
+        <div class="bg-overly ">
+            <div class="container text-center section-promo">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-6 col-xxs-12">
+                        <div class="iconbox-wrap">
+                            <div class="iconbox">
+                                <div class="iconbox-wrap-icon">
+                                    <i class="icon  icon-group"></i>
+                                </div>
+                                <div class="iconbox-wrap-content">
+                                    <h5><span>20 </span></h5>
+                                    <div class="iconbox-wrap-text"> Users</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3 col-xs-6 col-xxs-12">
+                        <div class="iconbox-wrap">
+                            <div class="iconbox">
+                                <div class="iconbox-wrap-icon">
+                                    <i class="icon  icon-folder-close"></i>
+                                </div>
+                                <div class="iconbox-wrap-content">
+                                    <h5><span>100</span></h5>
+                                    <div class="iconbox-wrap-text"> Folders</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3 col-xs-6  col-xxs-12">
+                        <div class="iconbox-wrap">
+                            <div class="iconbox">
+                                <div class="iconbox-wrap-icon">
+                                    <i class="icon  icon-folder-open"></i>
+                                </div>
+                                <div class="iconbox-wrap-content">
+                                    <h5><span>700</span></h5>
+                                    <div class="iconbox-wrap-text"> Files</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3 col-xs-6 col-xxs-12">
+                        <div class="iconbox-wrap">
+                            <div class="iconbox">
+                                <div class="iconbox-wrap-icon">
+                                    <i class="icon icon-facebook"></i>
+                                </div>
+                                <div class="iconbox-wrap-content">
+                                    <h5><span>50,000</span></h5>
+                                    <div class="iconbox-wrap-text"> Facebook Fans</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-bottom-info">
+        <div class="page-bottom-info-inner">
+            <div class="page-bottom-info-content text-center">
+                <h1>If you have any questions, comments or concerns, please call the Classified Advertising department
+                    at (000) 555-5555</h1>
+                <a class="btn  btn-lg btn-primary-dark" href="tel:+000000000">
+                    <i class="icon-mobile"></i> <span class="hide-xs color50">Call Now:</span> (000) 555-5555 </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <div class="container">
+            <ul class=" pull-left navbar-link footer-nav">
+                <li><a href="index.html"> Home </a> <a href="about-us.html"> About us </a> <a
+                        href="terms-conditions.html"> Terms and
+                    Conditions </a> <a href="index.html#"> Privacy Policy </a> <a href="contact.html"> Contact us </a>
+                    <a href="faq.html"> FAQ </a>
+            </ul>
+            <ul class=" pull-right navbar-link footer-nav">
+                <li> &copy; {{ current_year }} AlphaDMS</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+{% comment %} Modals start here {% endcomment %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Upload Files</h4>
+            </div>
+            <div class="modal-body">
+                <form id="my-awesome-dropzone" class="dropzone" action="/upload-files/">
+                    <!--<button type="submit" class="btn btn-primary pull-right">Submit Data!</button>-->
+                    <div class="dropzone-previews"></div>
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% comment %} Modals end here {% endcomment %}
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/sweetalert2.min.js' %}"></script>
+<script src="{% static 'js/dropzone.js' %}"></script>
+<script src="{% static 'js/app/index.js' %}"></script>
+</body>
+</html>

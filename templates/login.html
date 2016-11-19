@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Login - Alpha DMS</title>
+    {% comment %} Load the path to your css {% endcomment %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/formValidation.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sweetalert2.min.css' %}">
+    <script>
+        paceOptions = {
+            elements: true
+        };
+    </script>
+    <script src="{% static 'js/pace.min.js' %}"></script>
+</head>
+<body>
+
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 login-box">
+                <div class="panel panel-default">
+                    <div class="panel-intro text-center">
+                        <h2 class="logo-title">
+
+                            <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>
+                            ALPHA <span>DMS </span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" id="login_form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email:</label>
+                                <div class="input-icon"><i class="icon-mail fa"></i>
+                                    <input id="email" name="email" type="text" placeholder="Email"  class="form-control email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label">Password:</label>
+                                <div class="input-icon"><i class="icon-lock fa"></i>
+                                    <input type="password" name="password" class="form-control" placeholder="Password" id="password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-lg btn-primary-dark col-lg-offset-5" id="btn_login" > Login </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <p class="text-center"><a href="#"> Lost your password? </a>
+                        </p>
+                        <div style=" clear:both"></div>
+                    </div>
+                </div>
+                <div class="login-box-btm text-center">
+                    <p> Don't have an account? <br>
+                        <a href="/register"><strong>Sign Up !</strong> </a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/sweetalert2.min.js' %}"></script>
+<script src="{% static 'js/formValidation.min.js' %}"></script>
+<script src="{% static 'js/formValidation.bootstrap.min.js' %}"></script>
+<script src="{% static 'js/app/login.js' %}"></script>
+</body>
+</html>

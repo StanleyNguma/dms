@@ -1,0 +1,6 @@
+[client]
+database = alpha_dms
+host = 127.0.0.1
+user = root
+password = iceTea#2015
+default-character-set = utf8
