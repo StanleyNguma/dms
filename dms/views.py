@@ -1,14 +1,22 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from django import forms
+from dms.models import Folder
 import datetime
 
 
 def index(request):
+    # Get the current date
     now = datetime.datetime.now()
     if 'email' in request.session:
         email = request.session['email']
-        return render(request, 'index.html', {"username": email, "current_year": now.year})
+        # Get the number of folders in the database
+        number_of_folders = Folder.objects.all().count()
+        context = {
+            "number_of_folders": number_of_folders,
+            "username": email,
+            "current_year": now.year
+        }
+        return render(request, 'index.html', context)
     else:
         return render(request, 'login.html')
 

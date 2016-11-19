@@ -15,7 +15,7 @@ class Users(models.Model):
     email = models.CharField(max_length=45, unique=True)
     phone_no = models.CharField(max_length=20, default=None)
     group_id = models.IntegerField()
-    company_id = models.IntegerField()
+    company_id = models.IntegerField(default=0)
     maker = models.IntegerField()
     date_created = models.DateTimeField(auto_created=True)
     date_modified = models.DateTimeField(auto_now=True)
@@ -27,7 +27,7 @@ class Users(models.Model):
 class UserGroups(models.Model):
     name = models.CharField(max_length=45)
     description = models.CharField(max_length=255)
-    company_id = models.IntegerField()
+    company_id = models.IntegerField(default=0)
     maker = models.IntegerField()
     date_created = models.DateTimeField(auto_created=True)
     date_modified = models.DateTimeField(auto_now=True)
@@ -38,11 +38,29 @@ class UserGroups(models.Model):
 
 class Folder(models.Model):
     name = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, default=None)
+    is_parent = models.IntegerField(default=0)
+    has_children = models.IntegerField(default=0)
+    company_id = models.IntegerField(default=0)
+    maker = models.IntegerField()
+    date_created = models.DateTimeField(auto_created=True)
+    date_modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'alpha_folders'
 
 
 class File(models.Model):
     name = models.CharField(max_length=255)
     dms_name = models.CharField(max_length=255)
+    folder = models.ForeignKey(Folder, on_delete=models.CASCADE)
     size = models.CharField(max_length=20)
     type = models.CharField(max_length=50)
+    company_id = models.IntegerField(default=0)
+    maker = models.IntegerField()
+    date_created = models.DateTimeField(auto_created=True)
+    date_modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'alpha_files'
 

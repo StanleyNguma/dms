@@ -79,7 +79,10 @@ DATABASES = {
         'PASSWORD': 'iceTea#2015',
         'HOST': 'localhost',
         'NAME': 'alpha_dms',
-        'PORT': '3306'
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        }
     }
 }
 
